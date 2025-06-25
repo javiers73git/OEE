@@ -17,9 +17,7 @@
         <label for="operativo">Tiempo operativo (min):</label>
         <input type="number" id="operativo" min="0" step="1" required>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Tiempo efectivo en que la máquina estuvo operativa, sin contar paradas o tiempos muertos.
-          </span>
+          <span class="tooltip-hover">Tiempo efectivo en que la máquina estuvo operativa, sin contar paradas o tiempos muertos.</span>
         </span>
       </div>
 
@@ -27,9 +25,7 @@
         <label for="disponible">Tiempo disponible (min):</label>
         <input type="number" id="disponible" min="1" step="1" required>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Tiempo total planificado para producción, incluyendo tiempos muertos.
-          </span>
+          <span class="tooltip-hover">Tiempo total planificado para producción, incluyendo tiempos muertos.</span>
         </span>
       </div>
 
@@ -37,9 +33,7 @@
         <label for="piezas">Piezas producidas:</label>
         <input type="number" id="piezas" min="0" max="10000" step="1" required>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Cantidad total de unidades fabricadas en el periodo analizado.
-          </span>
+          <span class="tooltip-hover">Cantidad total de unidades fabricadas en el periodo analizado.</span>
         </span>
       </div>
 
@@ -47,9 +41,7 @@
         <label for="buenas">Piezas buenas:</label>
         <input type="number" id="buenas" min="0" step="1" required>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Piezas que cumplen con los estándares de calidad, sin reproceso.
-          </span>
+          <span class="tooltip-hover">Piezas que cumplen con los estándares de calidad, sin reproceso.</span>
         </span>
       </div>
 
@@ -57,9 +49,7 @@
         <label for="ideal">Cantidad ideal por minuto:</label>
         <input type="number" id="ideal" min="1" step="0.1" required>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Ritmo de producción ideal según especificaciones técnicas.
-          </span>
+          <span class="tooltip-hover">Ritmo de producción ideal según especificaciones técnicas.</span>
         </span>
       </div>
 
@@ -73,43 +63,35 @@
       <h2>📈 Resultados</h2>
       <div id="resultadoOEE">Esperando datos...</div>
 
-      <div class="result-group">
+      <div class="form-group">
         <label>Disponibilidad</label>
         <div class="barra"><div id="barraDisp" class="nivel"></div></div>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Porcentaje del tiempo disponible en el que la máquina estuvo realmente funcionando.
-          </span>
+          <span class="tooltip-hover">Porcentaje del tiempo disponible en el que la máquina estuvo realmente funcionando.</span>
         </span>
       </div>
 
-      <div class="result-group">
+      <div class="form-group">
         <label>Rendimiento</label>
         <div class="barra"><div id="barraRend" class="nivel"></div></div>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Medida de la velocidad real de producción respecto a la ideal.
-          </span>
+          <span class="tooltip-hover">Medida de la velocidad real de producción respecto a la ideal.</span>
         </span>
       </div>
 
-      <div class="result-group">
+      <div class="form-group">
         <label>Calidad</label>
         <div class="barra"><div id="barraCal" class="nivel"></div></div>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Porcentaje de piezas buenas sobre el total producido.
-          </span>
+          <span class="tooltip-hover">Porcentaje de piezas buenas sobre el total producido.</span>
         </span>
       </div>
 
-      <div class="result-group">
+      <div class="form-group">
         <label>OEE</label>
         <div class="barra total"><div id="barraOEE" class="nivel"></div></div>
         <span class="tooltip-container">ℹ
-          <span class="tooltip-hover">
-            Métrica global: disponibilidad × rendimiento × calidad.
-          </span>
+          <span class="tooltip-hover">Métrica global: disponibilidad × rendimiento × calidad.</span>
         </span>
       </div>
     </section>
