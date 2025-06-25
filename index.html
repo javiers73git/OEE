@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo OEE - Industria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Demo OEE - Overall Equipment Effectiveness</h1>
+
+  <div class="block">
+    <h2>📥 Ingreso de datos</h2>
+    <label>Tiempo operativo (min): <input type="number" id="operativo"></label><br>
+    <label>Tiempo disponible (min): <input type="number" id="disponible"></label><br>
+    <label>Piezas producidas: <input type="number" id="piezas"></label><br>
+    <label>Piezas buenas: <input type="number" id="buenas"></label><br>
+    <label>Cantidad ideal por minuto: <input type="number" id="ideal"></label><br>
+    <button onclick="calcularOEE()">Calcular OEE</button>
+    <button onclick="resetear()">Resetear</button>
+  </div>
+
+  <div class="block">
+    <h2>📊 Resultados</h2>
+    <p id="resultadoOEE">Esperando datos...</p>
+    <div class="chart">
+      <div id="dispBar" class="bar" style="--value:0%">Disponibilidad</div>
+      <div id="rendBar" class="bar" style="--value:0%">Rendimiento</div>
+      <div id="calBar" class="bar" style="--value:0%">Calidad</div>
+      <div id="oeeBar" class="bar total" style="--value:0%">OEE</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

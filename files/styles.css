@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+  margin: 30px;
+  background: #f4f4f4;
+  color: #333;
+}
+h1 {
+  color: #ff6600;
+}
+.block {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+label {
+  display: block;
+  margin: 10px 0;
+}
+input {
+  padding: 6px;
+  width: 200px;
+}
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #e65c00;
+}
+.chart {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.bar {
+  width: 100px;
+  height: 200px;
+  position: relative;
+  background: #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+.bar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: var(--value);
+  background: #4caf50;
+  border-radius: 4px 4px 0 0;
+}
+.bar.total::before {
+  background: #2196f3;
+}
