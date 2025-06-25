@@ -26,13 +26,14 @@ h1 {
 }
 
 .form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 label {
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -41,6 +42,8 @@ input {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .buttons {
@@ -69,6 +72,7 @@ button:hover {
 #resultadoOEE {
   margin-bottom: 20px;
   font-size: 16px;
+  white-space: pre-line;
 }
 
 .barras {
