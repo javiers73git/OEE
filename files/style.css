@@ -133,24 +133,28 @@ button:hover {
   border: 1px solid #666;
   position: absolute;
   z-index: 10;
-  top: 50%;
-  left: calc(100% + 5px);
-  transform: translateY(-50%);
+  top: 0;
+  left: 110%;
   transition: opacity 0.3s ease;
 }
 
 .tooltip-hover::after {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 10px;
   right: 100%;
-  margin-top: -6px;
   border-width: 6px;
   border-style: solid;
   border-color: transparent #333 transparent transparent;
 }
 
+
 .tooltip-container:hover .tooltip-hover {
   visibility: visible;
   opacity: 1;
+}
+.form-group,
+.barra-label {
+  position: relative;
+  overflow: visible;
 }
