@@ -156,3 +156,12 @@ button:hover {
   visibility: visible;
   opacity: 1;
 }
+.barra-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
