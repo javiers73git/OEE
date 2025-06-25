@@ -12,26 +12,32 @@
 
     <section class="card">
       <h2>🛠️ Ingreso de datos</h2>
+
       <div class="form-group">
-        <label>Tiempo operativo (min):</label>
+        <label for="operativo">Tiempo operativo (min):</label>
         <input type="number" id="operativo">
       </div>
+
       <div class="form-group">
-        <label>Tiempo disponible (min):</label>
+        <label for="disponible">Tiempo disponible (min):</label>
         <input type="number" id="disponible">
       </div>
+
       <div class="form-group">
-        <label>Piezas producidas:</label>
+        <label for="piezas">Piezas producidas:</label>
         <input type="number" id="piezas">
       </div>
+
       <div class="form-group">
-        <label>Piezas buenas:</label>
+        <label for="buenas">Piezas buenas:</label>
         <input type="number" id="buenas">
       </div>
+
       <div class="form-group">
-        <label>Cantidad ideal por minuto:</label>
+        <label for="ideal">Cantidad ideal por minuto:</label>
         <input type="number" id="ideal">
       </div>
+
       <div class="buttons">
         <button onclick="calcularOEE()">Calcular OEE</button>
         <button class="secundario" onclick="resetear()">Resetear</button>
