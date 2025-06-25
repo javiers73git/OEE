@@ -27,7 +27,7 @@ h1 {
 
 .form-group {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 200px 1fr auto;
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
@@ -48,6 +48,7 @@ input {
 
 .buttons {
   margin-top: 15px;
+  grid-column: span 3;
 }
 
 button {
@@ -89,13 +90,14 @@ button:hover {
   overflow: hidden;
 }
 
-.barra span {
-  position: absolute;
-  left: 10px;
-  top: 3px;
+.barra-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
   font-size: 13px;
   font-weight: bold;
-  z-index: 1;
+  color: #333;
 }
 
 .nivel {
@@ -108,60 +110,47 @@ button:hover {
 .total .nivel {
   background: #2196f3;
 }
-.info-icon {
-  cursor: pointer;
-  margin-left: 8px;
-  font-size: 16px;
-  color: #555;
-}
 
-.tooltip-text {
-  display: none;
-  margin-top: 5px;
-  padding: 10px;
-  background: #fffbe6;
-  border: 1px solid #f0c36d;
-  border-radius: 4px;
-  font-size: 13px;
-  color: #333;
-}
+/* --- Tooltip personalizado --- */
+
 .tooltip-container {
   position: relative;
   display: inline-block;
   cursor: pointer;
   font-size: 16px;
   color: #555;
-  margin-left: 5px;
 }
 
 .tooltip-hover {
   visibility: hidden;
   opacity: 0;
-  width: 220px;
-  background-color: #fffbe6;
-  color: #333;
+  width: 240px;
+  background-color: #333;
+  color: #fff;
   text-align: left;
   border-radius: 6px;
   padding: 10px;
-  border: 1px solid #f0c36d;
+  border: 1px solid #666;
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -110px;
+  z-index: 10;
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translateY(-50%);
   transition: opacity 0.3s ease;
+}
+
+.tooltip-hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #333 transparent transparent;
 }
 
 .tooltip-container:hover .tooltip-hover {
   visibility: visible;
   opacity: 1;
-}
-.barra-label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #333;
 }
