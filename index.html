@@ -2,34 +2,55 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Demo OEE - Industria</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Demo OEE - Overall Equipment Effectiveness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="files/style.css">
 </head>
 <body>
-  <h1>Demo OEE - Overall Equipment Effectiveness</h1>
+  <div class="container">
+    <h1>📊 Demo OEE - Overall Equipment Effectiveness</h1>
 
-  <div class="block">
-    <h2>📥 Ingreso de datos</h2>
-    <label>Tiempo operativo (min): <input type="number" id="operativo"></label><br>
-    <label>Tiempo disponible (min): <input type="number" id="disponible"></label><br>
-    <label>Piezas producidas: <input type="number" id="piezas"></label><br>
-    <label>Piezas buenas: <input type="number" id="buenas"></label><br>
-    <label>Cantidad ideal por minuto: <input type="number" id="ideal"></label><br>
-    <button onclick="calcularOEE()">Calcular OEE</button>
-    <button onclick="resetear()">Resetear</button>
+    <section class="card">
+      <h2>🛠️ Ingreso de datos</h2>
+      <div class="form-group">
+        <label>Tiempo operativo (min):</label>
+        <input type="number" id="operativo">
+      </div>
+      <div class="form-group">
+        <label>Tiempo disponible (min):</label>
+        <input type="number" id="disponible">
+      </div>
+      <div class="form-group">
+        <label>Piezas producidas:</label>
+        <input type="number" id="piezas">
+      </div>
+      <div class="form-group">
+        <label>Piezas buenas:</label>
+        <input type="number" id="buenas">
+      </div>
+      <div class="form-group">
+        <label>Cantidad ideal por minuto:</label>
+        <input type="number" id="ideal">
+      </div>
+      <div class="buttons">
+        <button onclick="calcularOEE()">Calcular OEE</button>
+        <button class="secundario" onclick="resetear()">Resetear</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📈 Resultados</h2>
+      <div id="resultadoOEE">Esperando datos...</div>
+
+      <div class="barras">
+        <div class="barra"><span>Disponibilidad</span><div id="barraDisp" class="nivel"></div></div>
+        <div class="barra"><span>Rendimiento</span><div id="barraRend" class="nivel"></div></div>
+        <div class="barra"><span>Calidad</span><div id="barraCal" class="nivel"></div></div>
+        <div class="barra total"><span>OEE</span><div id="barraOEE" class="nivel"></div></div>
+      </div>
+    </section>
   </div>
 
-  <div class="block">
-    <h2>📊 Resultados</h2>
-    <p id="resultadoOEE">Esperando datos...</p>
-    <div class="chart">
-      <div id="dispBar" class="bar" style="--value:0%">Disponibilidad</div>
-      <div id="rendBar" class="bar" style="--value:0%">Rendimiento</div>
-      <div id="calBar" class="bar" style="--value:0%">Calidad</div>
-      <div id="oeeBar" class="bar total" style="--value:0%">OEE</div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="files/script.js"></script>
 </body>
 </html>

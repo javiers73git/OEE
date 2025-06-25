@@ -1,63 +1,106 @@
 body {
-  font-family: sans-serif;
-  margin: 30px;
+  font-family: 'Segoe UI', sans-serif;
   background: #f4f4f4;
   color: #333;
+  margin: 0;
+  padding: 20px;
 }
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
 h1 {
   color: #ff6600;
-}
-.block {
-  background: white;
-  padding: 20px;
+  text-align: center;
   margin-bottom: 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+
+.card {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
 label {
-  display: block;
-  margin: 10px 0;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
+
 input {
-  padding: 6px;
-  width: 200px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
+.buttons {
+  margin-top: 15px;
+}
+
 button {
-  padding: 8px 12px;
-  margin-top: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
   background: #ff6600;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
+
+button.secundario {
+  background: #666;
+  margin-left: 10px;
+}
+
 button:hover {
-  background: #e65c00;
+  opacity: 0.9;
 }
-.chart {
+
+#resultadoOEE {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.barras {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
-.bar {
-  width: 100px;
-  height: 200px;
+
+.barra {
+  background: #eee;
+  height: 25px;
+  border-radius: 5px;
   position: relative;
-  background: #ddd;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 14px;
-  color: white;
+  overflow: hidden;
 }
-.bar::before {
-  content: "";
-  display: block;
+
+.barra span {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: var(--value);
-  background: #4caf50;
-  border-radius: 4px 4px 0 0;
+  left: 10px;
+  top: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  z-index: 1;
 }
-.bar.total::before {
+
+.nivel {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.5s ease;
+}
+
+.total .nivel {
   background: #2196f3;
 }

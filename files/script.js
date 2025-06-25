@@ -6,12 +6,12 @@ function calcularOEE() {
   const ideal = parseFloat(document.getElementById("ideal").value);
 
   if (isNaN(operativo) || isNaN(disponible) || isNaN(piezas) || isNaN(buenas) || isNaN(ideal)) {
-    alert("Por favor, completa todos los campos.");
+    alert("Por favor, completá todos los campos correctamente.");
     return;
   }
 
   const disponibilidad = operativo / disponible;
-  const rendimiento = (piezas / (operativo * ideal));
+  const rendimiento = piezas / (operativo * ideal);
   const calidad = buenas / piezas;
   const oee = disponibilidad * rendimiento * calidad;
 
@@ -19,25 +19,26 @@ function calcularOEE() {
 }
 
 function mostrarResultados(d, r, c, o) {
-  const porc = x => (x * 100).toFixed(1) + "%";
+  const format = x => (x * 100).toFixed(1) + "%";
+  const resultado = `
+📌 Disponibilidad: ${format(d)}  
+📌 Rendimiento: ${format(r)}  
+📌 Calidad: ${format(c)}  
+🎯 OEE Total: ${format(o)}
+  `;
 
-  document.getElementById("resultadoOEE").textContent = `
-📌 Disponibilidad: ${porc(d)}
-📌 Rendimiento: ${porc(r)}
-📌 Calidad: ${porc(c)}
-📈 OEE Total: ${porc(o)}
-`;
+  document.getElementById("resultadoOEE").textContent = resultado;
 
-  document.getElementById("dispBar").style.setProperty("--value", porc(d));
-  document.getElementById("rendBar").style.setProperty("--value", porc(r));
-  document.getElementById("calBar").style.setProperty("--value", porc(c));
-  document.getElementById("oeeBar").style.setProperty("--value", porc(o));
+  document.getElementById("barraDisp").style.width = format(d);
+  document.getElementById("barraRend").style.width = format(r);
+  document.getElementById("barraCal").style.width = format(c);
+  document.getElementById("barraOEE").style.width = format(o);
 }
 
 function resetear() {
   document.querySelectorAll("input").forEach(i => i.value = "");
   document.getElementById("resultadoOEE").textContent = "Esperando datos...";
-  ["dispBar", "rendBar", "calBar", "oeeBar"].forEach(id => {
-    document.getElementById(id).style.setProperty("--value", "0%");
+  ["barraDisp", "barraRend", "barraCal", "barraOEE"].forEach(id => {
+    document.getElementById(id).style.width = "0%";
   });
 }
