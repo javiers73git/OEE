@@ -73,54 +73,44 @@
       <h2>📈 Resultados</h2>
       <div id="resultadoOEE">Esperando datos...</div>
 
-      <div class="barras">
-        <div class="barra">
-          <div class="barra-label">
-            Disponibilidad
-            <span class="tooltip-container">ℹ
-              <span class="tooltip-hover">
-                Porcentaje del tiempo disponible en el que la máquina estuvo realmente funcionando.
-              </span>
-            </span>
-          </div>
-          <div id="barraDisp" class="nivel"></div>
-        </div>
+      <div class="result-group">
+        <label>Disponibilidad</label>
+        <div class="barra"><div id="barraDisp" class="nivel"></div></div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Porcentaje del tiempo disponible en el que la máquina estuvo realmente funcionando.
+          </span>
+        </span>
+      </div>
 
-        <div class="barra">
-          <div class="barra-label">
-            Rendimiento
-            <span class="tooltip-container">ℹ
-              <span class="tooltip-hover">
-                Medida de la velocidad real de producción respecto a la ideal.
-              </span>
-            </span>
-          </div>
-          <div id="barraRend" class="nivel"></div>
-        </div>
+      <div class="result-group">
+        <label>Rendimiento</label>
+        <div class="barra"><div id="barraRend" class="nivel"></div></div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Medida de la velocidad real de producción respecto a la ideal.
+          </span>
+        </span>
+      </div>
 
-        <div class="barra">
-          <div class="barra-label">
-            Calidad
-            <span class="tooltip-container">ℹ
-              <span class="tooltip-hover">
-                Porcentaje de piezas buenas sobre el total producido.
-              </span>
-            </span>
-          </div>
-          <div id="barraCal" class="nivel"></div>
-        </div>
+      <div class="result-group">
+        <label>Calidad</label>
+        <div class="barra"><div id="barraCal" class="nivel"></div></div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Porcentaje de piezas buenas sobre el total producido.
+          </span>
+        </span>
+      </div>
 
-        <div class="barra total">
-          <div class="barra-label">
-            OEE
-            <span class="tooltip-container">ℹ
-              <span class="tooltip-hover">
-                Métrica global: disponibilidad × rendimiento × calidad.
-              </span>
-            </span>
-          </div>
-          <div id="barraOEE" class="nivel"></div>
-        </div>
+      <div class="result-group">
+        <label>OEE</label>
+        <div class="barra total"><div id="barraOEE" class="nivel"></div></div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Métrica global: disponibilidad × rendimiento × calidad.
+          </span>
+        </span>
       </div>
     </section>
   </div>

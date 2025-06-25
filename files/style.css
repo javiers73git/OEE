@@ -25,12 +25,14 @@ h1 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.form-group {
+.form-group,
+.result-group {
   display: grid;
   grid-template-columns: 200px 1fr auto;
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
+  position: relative;
 }
 
 label {
@@ -74,32 +76,14 @@ button:hover {
   margin-bottom: 20px;
   font-size: 16px;
   white-space: pre-line;
-}
-
-.barras {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  grid-column: span 3;
 }
 
 .barra {
   background: #eee;
   height: 25px;
   border-radius: 5px;
-  overflow: visible;
-  padding: 2px 10px;
-  position: relative;
-}
-
-.barra-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 3px;
-  position: relative;
+  overflow: hidden;
 }
 
 .nivel {
@@ -135,28 +119,24 @@ button:hover {
   border: 1px solid #666;
   position: absolute;
   z-index: 10;
-  top: 0;
-  left: 110%;
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translateY(-50%);
   transition: opacity 0.3s ease;
 }
 
 .tooltip-hover::after {
   content: '';
   position: absolute;
-  top: 10px;
+  top: 50%;
   right: 100%;
+  margin-top: -6px;
   border-width: 6px;
   border-style: solid;
   border-color: transparent #333 transparent transparent;
 }
 
-
 .tooltip-container:hover .tooltip-hover {
   visibility: visible;
   opacity: 1;
-}
-.form-group,
-.barra-label {
-  position: relative;
-  overflow: visible;
 }
