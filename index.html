@@ -16,46 +16,51 @@
       <div class="form-group">
         <label for="operativo">Tiempo operativo (min):</label>
         <input type="number" id="operativo" min="0" step="1" required>
-        <span class="info-icon" onclick="mostrarTooltip('tooltip-operativo')">ℹ</span>
-        <div id="tooltip-operativo" class="tooltip-text">
-          Tiempo efectivo en que la máquina estuvo operativa, sin contar paradas o tiempos muertos.
-        </div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Tiempo efectivo en que la máquina estuvo operativa, sin contar paradas o tiempos muertos.
+          </span>
+        </span>
       </div>
 
       <div class="form-group">
         <label for="disponible">Tiempo disponible (min):</label>
         <input type="number" id="disponible" min="1" step="1" required>
-        <span class="info-icon" onclick="mostrarTooltip('tooltip-disponible')">ℹ</span>
-        <div id="tooltip-disponible" class="tooltip-text">
-          Tiempo total planificado para producción, incluyendo tiempos muertos.
-        </div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Tiempo total planificado para producción, incluyendo tiempos muertos.
+          </span>
+        </span>
       </div>
 
       <div class="form-group">
         <label for="piezas">Piezas producidas:</label>
         <input type="number" id="piezas" min="0" max="10000" step="1" required>
-        <span class="info-icon" onclick="mostrarTooltip('tooltip-piezas')">ℹ</span>
-        <div id="tooltip-piezas" class="tooltip-text">
-          Cantidad total de unidades fabricadas en el periodo analizado.
-        </div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Cantidad total de unidades fabricadas en el periodo analizado.
+          </span>
+        </span>
       </div>
 
       <div class="form-group">
         <label for="buenas">Piezas buenas:</label>
         <input type="number" id="buenas" min="0" step="1" required>
-        <span class="info-icon" onclick="mostrarTooltip('tooltip-buenas')">ℹ</span>
-        <div id="tooltip-buenas" class="tooltip-text">
-          Piezas que cumplen con los estándares de calidad, sin reproceso.
-        </div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Piezas que cumplen con los estándares de calidad, sin reproceso.
+          </span>
+        </span>
       </div>
 
       <div class="form-group">
         <label for="ideal">Cantidad ideal por minuto:</label>
         <input type="number" id="ideal" min="1" step="0.1" required>
-        <span class="info-icon" onclick="mostrarTooltip('tooltip-ideal')">ℹ</span>
-        <div id="tooltip-ideal" class="tooltip-text">
-          Ritmo de producción ideal según especificaciones técnicas.
-        </div>
+        <span class="tooltip-container">ℹ
+          <span class="tooltip-hover">
+            Ritmo de producción ideal según especificaciones técnicas.
+          </span>
+        </span>
       </div>
 
       <div class="buttons">
@@ -69,10 +74,53 @@
       <div id="resultadoOEE">Esperando datos...</div>
 
       <div class="barras">
-        <div class="barra"><span>Disponibilidad</span><div id="barraDisp" class="nivel"></div></div>
-        <div class="barra"><span>Rendimiento</span><div id="barraRend" class="nivel"></div></div>
-        <div class="barra"><span>Calidad</span><div id="barraCal" class="nivel"></div></div>
-        <div class="barra total"><span>OEE</span><div id="barraOEE" class="nivel"></div></div>
+        <div class="barra">
+          <span>
+            Disponibilidad
+            <span class="tooltip-container">ℹ
+              <span class="tooltip-hover">
+                Porcentaje del tiempo disponible en el que la máquina estuvo realmente funcionando.
+              </span>
+            </span>
+          </span>
+          <div id="barraDisp" class="nivel"></div>
+        </div>
+
+        <div class="barra">
+          <span>
+            Rendimiento
+            <span class="tooltip-container">ℹ
+              <span class="tooltip-hover">
+                Medida de la velocidad real de producción respecto a la ideal.
+              </span>
+            </span>
+          </span>
+          <div id="barraRend" class="nivel"></div>
+        </div>
+
+        <div class="barra">
+          <span>
+            Calidad
+            <span class="tooltip-container">ℹ
+              <span class="tooltip-hover">
+                Porcentaje de piezas buenas sobre el total producido.
+              </span>
+            </span>
+          </span>
+          <div id="barraCal" class="nivel"></div>
+        </div>
+
+        <div class="barra total">
+          <span>
+            OEE
+            <span class="tooltip-container">ℹ
+              <span class="tooltip-hover">
+                Métrica global: disponibilidad × rendimiento × calidad.
+              </span>
+            </span>
+          </span>
+          <div id="barraOEE" class="nivel"></div>
+        </div>
       </div>
     </section>
   </div>
