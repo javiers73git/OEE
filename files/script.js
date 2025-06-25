@@ -10,6 +10,16 @@ function calcularOEE() {
     return;
   }
 
+  if (operativo > disponible) {
+    alert("❌ El tiempo operativo no puede ser mayor al tiempo disponible.");
+    return;
+  }
+
+  if (buenas > piezas) {
+    alert("❌ Las piezas buenas no pueden superar la cantidad total producida.");
+    return;
+  }
+
   const disponibilidad = operativo / disponible;
   const rendimiento = piezas / (operativo * ideal);
   const calidad = buenas / piezas;
@@ -41,4 +51,9 @@ function resetear() {
   ["barraDisp", "barraRend", "barraCal", "barraOEE"].forEach(id => {
     document.getElementById(id).style.width = "0%";
   });
+}
+
+function mostrarTooltip(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }

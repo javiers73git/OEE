@@ -108,3 +108,20 @@ button:hover {
 .total .nivel {
   background: #2196f3;
 }
+.info-icon {
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.tooltip-text {
+  display: none;
+  margin-top: 5px;
+  padding: 10px;
+  background: #fffbe6;
+  border: 1px solid #f0c36d;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+}

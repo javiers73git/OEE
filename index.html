@@ -15,27 +15,47 @@
 
       <div class="form-group">
         <label for="operativo">Tiempo operativo (min):</label>
-        <input type="number" id="operativo">
+        <input type="number" id="operativo" min="0" step="1" required>
+        <span class="info-icon" onclick="mostrarTooltip('tooltip-operativo')">ℹ</span>
+        <div id="tooltip-operativo" class="tooltip-text">
+          Tiempo efectivo en que la máquina estuvo operativa, sin contar paradas o tiempos muertos.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="disponible">Tiempo disponible (min):</label>
-        <input type="number" id="disponible">
+        <input type="number" id="disponible" min="1" step="1" required>
+        <span class="info-icon" onclick="mostrarTooltip('tooltip-disponible')">ℹ</span>
+        <div id="tooltip-disponible" class="tooltip-text">
+          Tiempo total planificado para producción, incluyendo tiempos muertos.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="piezas">Piezas producidas:</label>
-        <input type="number" id="piezas">
+        <input type="number" id="piezas" min="0" max="10000" step="1" required>
+        <span class="info-icon" onclick="mostrarTooltip('tooltip-piezas')">ℹ</span>
+        <div id="tooltip-piezas" class="tooltip-text">
+          Cantidad total de unidades fabricadas en el periodo analizado.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="buenas">Piezas buenas:</label>
-        <input type="number" id="buenas">
+        <input type="number" id="buenas" min="0" step="1" required>
+        <span class="info-icon" onclick="mostrarTooltip('tooltip-buenas')">ℹ</span>
+        <div id="tooltip-buenas" class="tooltip-text">
+          Piezas que cumplen con los estándares de calidad, sin reproceso.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="ideal">Cantidad ideal por minuto:</label>
-        <input type="number" id="ideal">
+        <input type="number" id="ideal" min="1" step="0.1" required>
+        <span class="info-icon" onclick="mostrarTooltip('tooltip-ideal')">ℹ</span>
+        <div id="tooltip-ideal" class="tooltip-text">
+          Ritmo de producción ideal según especificaciones técnicas.
+        </div>
       </div>
 
       <div class="buttons">
